@@ -1,19 +1,19 @@
-import Home from '../../routes/Home';
-import Authentication from '../../routes/Authentication';
 import { Routes, Route } from 'react-router-dom';
-import Navigation from '../../routes/NavigationBar';
 
-const Shop = () => {
-	return <div>I'm the Shopping page</div>;
-};
+import Home from '../../routes/Home';
+import Navigation from '../../routes/Navigation';
+import Authentication from '../../routes/Authentication';
+import Shop from '../../routes/Shop';
+import Checkout from '../../routes/Checkout';
 
 const App = () => {
 	return (
 		<Routes>
 			<Route path='/' element={<Navigation />}>
-				<Route index element={<Home />}></Route>
-				<Route path='/shop' element={<Shop />}></Route>
-				<Route path='/auth' element={<Authentication />}></Route>
+				<Route index element={<Home />} />
+				<Route path='shop/*' element={<Shop />} />
+				<Route path='auth' element={<Authentication />} />
+				<Route path='checkout' element={<Checkout />} />
 			</Route>
 		</Routes>
 	);
